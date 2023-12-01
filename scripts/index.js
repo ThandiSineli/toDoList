@@ -26,16 +26,16 @@ function displayTodoList() {
 
   const checkboxes = document.querySelectorAll('.checkbox');
   checkboxes.forEach((checkbox) => {
-    checkbox.addEventListener('change', (e) => {
-      const index = e.target.dataset.index;
+    checkbox.addEventListener('change', (a) => {
+      const index = a.target.dataset.index;
       toggleCompleted(index);
     });
   });
 
   const deleteButtons = document.querySelectorAll('.deleteBtn');
   deleteButtons.forEach((button) => {
-    button.addEventListener('click', (e) => {
-      const index = e.target.dataset.index;
+    button.addEventListener('click', (a) => {
+      const index = a.target.dataset.index;
       removeItem(index);
     });
   });
@@ -79,7 +79,7 @@ function removeItem(index) {
 }
 
 function sortItems() {
-  todoArray.sort((a, b) => a.name.localeCompare(b.name));
+  todoArray.sort((b, c) => b.name.localeCompare(c.name));
   saveTodoList();
   displayTodoList();
 }
